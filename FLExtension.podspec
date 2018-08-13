@@ -7,12 +7,13 @@ Pod::Spec.new do |s|
   #                 DESC
   s.homepage     = "https://github.com/yangli0168/FLExtension.git"
   #s.license      = "MIT (example)"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "[yangli996]" => "[yangli996@126.com]" }
   s.platform =  :ios, "7.0"
   #s.ios.platform =  :ios, "7.0"
   #s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/yangli0168/FLExtension.git", :tag => s.version }
+  s.source_files = "FLExtension/**/*.{h,m}"
   s.requires_arc = true
 
 

@@ -285,7 +285,7 @@ NSString * const FLCycID = @"cycleCellID";
 {
     FLCycleAdCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:FLCycID forIndexPath:indexPath];
     
-    int pageCount = indexPath.row;
+    NSInteger pageCount = indexPath.row;
     if (pageCount > _imagesList.count) {
         pageCount = 0;
     }else if (pageCount == 0){
@@ -305,7 +305,7 @@ NSString * const FLCycID = @"cycleCellID";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    int pageCount = indexPath.row;
+    NSInteger pageCount = indexPath.row;
     if (pageCount > _imagesList.count) {
         pageCount = 0;
     }else if (pageCount == 0){
