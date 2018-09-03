@@ -19,7 +19,8 @@
 /*
  * 取消UIScrollView自适应
  */
-+(void)adjustsScrollViewInsetsForViewController:(UIViewController *)vc scrollerView:(UIScrollView *)scv;
++(void)neverAdjustsContentInsetForScrollView:(UIScrollView *)scrollView;
++(void)neverAdjustsContentInsetForViewController:(UIViewController *)VC;
 
 /*
  *是否有麦克风权限

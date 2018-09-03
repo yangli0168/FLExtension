@@ -26,14 +26,21 @@
     }
 }
 
-+(void)adjustsScrollViewInsetsForViewController:(UIViewController *)vc scrollerView:(UIScrollView *)scv
++(void)neverAdjustsContentInsetForScrollView:(UIScrollView *)scrollView
 {
     if (@available(iOS 11.0, *)) {
-        scv.contentInsetAdjustmentBehavior = UIApplicationBackgroundFetchIntervalNever;
-    } else {
-        vc.automaticallyAdjustsScrollViewInsets = false;
+        scrollView.contentInsetAdjustmentBehavior = UIApplicationBackgroundFetchIntervalNever;
     }
 }
+
++(void)neverAdjustsContentInsetForViewController:(UIViewController *)VC
+{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    VC.automaticallyAdjustsScrollViewInsets = NO;
+#pragma clang diagnostic pop
+}
+
 
 +(UIImage *)resizableImage:(UIImage *)oldImage
 {
