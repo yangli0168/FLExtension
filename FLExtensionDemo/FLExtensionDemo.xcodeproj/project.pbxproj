@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F8389FF213CE31100336045 /* UITextField+FLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8389FE213CE31100336045 /* UITextField+FLExtension.m */; };
 		8FB8F31A212138A2000A03DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F319212138A2000A03DF /* AppDelegate.m */; };
 		8FB8F31D212138A2000A03DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F31C212138A2000A03DF /* ViewController.m */; };
 		8FB8F320212138A2000A03DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F31E212138A2000A03DF /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F8389FD213CE31100336045 /* UITextField+FLExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+FLExtension.h"; sourceTree = "<group>"; };
+		8F8389FE213CE31100336045 /* UITextField+FLExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+FLExtension.m"; sourceTree = "<group>"; };
 		8FB8F315212138A2000A03DF /* FLExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB8F318212138A2000A03DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FB8F319212138A2000A03DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -198,20 +201,22 @@
 		8FB8F348212138F9000A03DF /* FLUIKitExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8FB8F349212138F9000A03DF /* UIControl+FLExtension.m */,
-				8FB8F34A212138F9000A03DF /* UIColor+FLExtension.m */,
-				8FB8F34B212138F9000A03DF /* UIAlertView+FLExtension.h */,
-				8FB8F34C212138F9000A03DF /* UIView+FLExtensionForFrame.h */,
-				8FB8F34D212138F9000A03DF /* UIGestureRecognizer+FLExtension.m */,
-				8FB8F34E212138F9000A03DF /* UIView+FLExtensionForTouch.h */,
-				8FB8F34F212138F9000A03DF /* UIWindow+FLExtension.h */,
 				8FB8F350212138F9000A03DF /* UIControl+FLExtension.h */,
+				8FB8F349212138F9000A03DF /* UIControl+FLExtension.m */,
 				8FB8F351212138F9000A03DF /* UIColor+FLExtension.h */,
-				8FB8F352212138F9000A03DF /* UIWindow+FLExtension.m */,
-				8FB8F353212138F9000A03DF /* UIView+FLExtensionForTouch.m */,
-				8FB8F354212138F9000A03DF /* UIGestureRecognizer+FLExtension.h */,
+				8FB8F34A212138F9000A03DF /* UIColor+FLExtension.m */,
 				8FB8F355212138F9000A03DF /* UIView+FLExtensionForFrame.m */,
+				8FB8F34C212138F9000A03DF /* UIView+FLExtensionForFrame.h */,
+				8FB8F34E212138F9000A03DF /* UIView+FLExtensionForTouch.h */,
+				8FB8F353212138F9000A03DF /* UIView+FLExtensionForTouch.m */,
+				8FB8F34F212138F9000A03DF /* UIWindow+FLExtension.h */,
+				8FB8F352212138F9000A03DF /* UIWindow+FLExtension.m */,
+				8FB8F354212138F9000A03DF /* UIGestureRecognizer+FLExtension.h */,
+				8FB8F34D212138F9000A03DF /* UIGestureRecognizer+FLExtension.m */,
+				8FB8F34B212138F9000A03DF /* UIAlertView+FLExtension.h */,
 				8FB8F356212138F9000A03DF /* UIAlertView+FLExtension.m */,
+				8F8389FD213CE31100336045 /* UITextField+FLExtension.h */,
+				8F8389FE213CE31100336045 /* UITextField+FLExtension.m */,
 			);
 			path = FLUIKitExtension;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				8FB8F36B212138F9000A03DF /* FLLog.m in Sources */,
 				8FB8F36A212138F9000A03DF /* UIAlertView+FLExtension.m in Sources */,
 				8FB8F363212138F9000A03DF /* NSFileManager+FLExtension.m in Sources */,
+				8F8389FF213CE31100336045 /* UITextField+FLExtension.m in Sources */,
 				8FB8F362212138F9000A03DF /* NSDictionary+FLExtension.m in Sources */,
 				8FB8F35D212138F9000A03DF /* NSTimer+FLExtension.m in Sources */,
 				8FB8F364212138F9000A03DF /* UIControl+FLExtension.m in Sources */,
