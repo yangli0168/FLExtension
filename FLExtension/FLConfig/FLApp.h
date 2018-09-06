@@ -23,26 +23,6 @@
 +(void)neverAdjustsContentInsetForViewController:(UIViewController *)VC;
 
 /*
- *是否有麦克风权限
- */
-+(BOOL)canRecordPermission;
-
-/*
- *是否有相机使用权限
- */
-+(BOOL)canCameraPermission;
-
-/*
- *是否有相册权限
- */
-+(BOOL)canPhotoPermission;
-
-/*
- *是否有通知权限
- */
-+ (BOOL)canNotificationPermission;
-
-/*
  * 拉伸图片
  */
 +(UIImage *)resizableImage:(UIImage *)oldImage;

@@ -57,58 +57,58 @@
     return newImage1;
 }
 
-//是否有麦克风权限
-+(BOOL)canRecordPermission
-{
-    __block BOOL bCanRecord = YES;
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
-    {
-        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-        if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
-            [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
-                if (granted) {
-                    bCanRecord = YES;
-                }else {
-                    bCanRecord = NO;//
-                }
-            }];
-        }
-    }
-    return bCanRecord;
-}
-
-+(BOOL)canCameraPermission
-{
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        if (authStatus == AVAuthorizationStatusDenied || authStatus == AVAuthorizationStatusRestricted) {
-            return NO;
-        }
-        return YES;
-    }
-    return NO;
-}
-
-+(BOOL)canPhotoPermission
-{
-    //判断是否已授权
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
-        if (authStatus == ALAuthorizationStatusDenied || authStatus ==  ALAuthorizationStatusRestricted) {
-            return NO;
-        }
-        return YES;
-    }
-    return NO;
-}
-
-+ (BOOL)canNotificationPermission {
-    //iOS8 check if user allow notification
-    UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
-    if (UIUserNotificationTypeNone != setting.types) {
-        return YES;
-    }
-    return NO;
-}
+////是否有麦克风权限
+//+(BOOL)canRecordPermission
+//{
+//    __block BOOL bCanRecord = YES;
+//    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
+//    {
+//        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+//        if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
+//            [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+//                if (granted) {
+//                    bCanRecord = YES;
+//                }else {
+//                    bCanRecord = NO;//
+//                }
+//            }];
+//        }
+//    }
+//    return bCanRecord;
+//}
+//
+//+(BOOL)canCameraPermission
+//{
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+//        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+//        if (authStatus == AVAuthorizationStatusDenied || authStatus == AVAuthorizationStatusRestricted) {
+//            return NO;
+//        }
+//        return YES;
+//    }
+//    return NO;
+//}
+//
+//+(BOOL)canPhotoPermission
+//{
+//    //判断是否已授权
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+//        ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+//        if (authStatus == ALAuthorizationStatusDenied || authStatus ==  ALAuthorizationStatusRestricted) {
+//            return NO;
+//        }
+//        return YES;
+//    }
+//    return NO;
+//}
+//
+//+ (BOOL)canNotificationPermission {
+//    //iOS8 check if user allow notification
+//    UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
+//    if (UIUserNotificationTypeNone != setting.types) {
+//        return YES;
+//    }
+//    return NO;
+//}
 
 @end
