@@ -15,12 +15,31 @@
 +(BOOL)isiPhoneXScreen
 {
     if (@available(iOS 11.0, *)){
-        UIEdgeInsets edgeInset = [UIApplication sharedApplication].windows[0].safeAreaInsets;
-        if (UIEdgeInsetsEqualToEdgeInsets(edgeInset, UIEdgeInsetsZero)) {
-            return NO;
-        }else{
-            return YES;
+        CGFloat iPhoneNotchDirectionSafeAreaInsets = 0;
+        UIEdgeInsets safeAreaInsets = [UIApplication sharedApplication].windows[0].safeAreaInsets;
+        switch ([UIApplication sharedApplication].statusBarOrientation) {
+            case UIInterfaceOrientationPortrait:{
+                iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.top;
+            }
+                break;
+            case UIInterfaceOrientationLandscapeLeft:{
+                iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.left;
+            }
+                break;
+            case UIInterfaceOrientationLandscapeRight:{
+                iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.right;
+            }
+                break;
+            case UIInterfaceOrientationPortraitUpsideDown:{
+                iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.bottom;
+            }
+                break;
+            default:
+                iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.top;
+                break;
         }
+        return iPhoneNotchDirectionSafeAreaInsets > 20;
+        
     }else{
         return NO;
     }
