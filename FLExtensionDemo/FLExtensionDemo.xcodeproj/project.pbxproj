@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F5A35F321C79C56005F2EAE /* NSDate+FLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5A35F221C79C56005F2EAE /* NSDate+FLExtension.m */; };
 		8F8389FF213CE31100336045 /* UITextField+FLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8389FE213CE31100336045 /* UITextField+FLExtension.m */; };
 		8FB8F31A212138A2000A03DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F319212138A2000A03DF /* AppDelegate.m */; };
 		8FB8F31D212138A2000A03DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F31C212138A2000A03DF /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F5A35F121C79C56005F2EAE /* NSDate+FLExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+FLExtension.h"; sourceTree = "<group>"; };
+		8F5A35F221C79C56005F2EAE /* NSDate+FLExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FLExtension.m"; sourceTree = "<group>"; };
 		8F8389FD213CE31100336045 /* UITextField+FLExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+FLExtension.h"; sourceTree = "<group>"; };
 		8F8389FE213CE31100336045 /* UITextField+FLExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+FLExtension.m"; sourceTree = "<group>"; };
 		8FB8F315212138A2000A03DF /* FLExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,19 +184,21 @@
 			isa = PBXGroup;
 			children = (
 				8FB8F33A212138F9000A03DF /* NSArray+FLExtension.h */,
+				8FB8F342212138F9000A03DF /* NSArray+FLExtension.m */,
 				8FB8F33B212138F9000A03DF /* NSString+FLExtension.h */,
+				8FB8F341212138F9000A03DF /* NSString+FLExtension.m */,
+				8FB8F344212138F9000A03DF /* NSTimer+FLExtension.h */,
 				8FB8F33C212138F9000A03DF /* NSTimer+FLExtension.m */,
+				8FB8F343212138F9000A03DF /* NSData+FLExtension.h */,
 				8FB8F33D212138F9000A03DF /* NSData+FLExtension.m */,
 				8FB8F33E212138F9000A03DF /* NSDictionary+FLExtension.h */,
-				8FB8F33F212138F9000A03DF /* NSObject+FLExtension.h */,
-				8FB8F340212138F9000A03DF /* NSFileManager+FLExtension.h */,
-				8FB8F341212138F9000A03DF /* NSString+FLExtension.m */,
-				8FB8F342212138F9000A03DF /* NSArray+FLExtension.m */,
-				8FB8F343212138F9000A03DF /* NSData+FLExtension.h */,
-				8FB8F344212138F9000A03DF /* NSTimer+FLExtension.h */,
-				8FB8F345212138F9000A03DF /* NSObject+FLExtension.m */,
 				8FB8F346212138F9000A03DF /* NSDictionary+FLExtension.m */,
+				8FB8F33F212138F9000A03DF /* NSObject+FLExtension.h */,
+				8FB8F345212138F9000A03DF /* NSObject+FLExtension.m */,
+				8FB8F340212138F9000A03DF /* NSFileManager+FLExtension.h */,
 				8FB8F347212138F9000A03DF /* NSFileManager+FLExtension.m */,
+				8F5A35F121C79C56005F2EAE /* NSDate+FLExtension.h */,
+				8F5A35F221C79C56005F2EAE /* NSDate+FLExtension.m */,
 			);
 			path = FLCoreExtension;
 			sourceTree = "<group>";
@@ -205,8 +210,8 @@
 				8FB8F349212138F9000A03DF /* UIControl+FLExtension.m */,
 				8FB8F351212138F9000A03DF /* UIColor+FLExtension.h */,
 				8FB8F34A212138F9000A03DF /* UIColor+FLExtension.m */,
-				8FB8F355212138F9000A03DF /* UIView+FLExtensionForFrame.m */,
 				8FB8F34C212138F9000A03DF /* UIView+FLExtensionForFrame.h */,
+				8FB8F355212138F9000A03DF /* UIView+FLExtensionForFrame.m */,
 				8FB8F34E212138F9000A03DF /* UIView+FLExtensionForTouch.h */,
 				8FB8F353212138F9000A03DF /* UIView+FLExtensionForTouch.m */,
 				8FB8F34F212138F9000A03DF /* UIWindow+FLExtension.h */,
@@ -316,6 +321,7 @@
 				8FB8F35C212138F9000A03DF /* FLCycleAdView.m in Sources */,
 				8FB8F35B212138F9000A03DF /* FLPageControl.m in Sources */,
 				8FB8F36E212151EB000A03DF /* FLApp.m in Sources */,
+				8F5A35F321C79C56005F2EAE /* NSDate+FLExtension.m in Sources */,
 				8FB8F36B212138F9000A03DF /* FLLog.m in Sources */,
 				8FB8F36A212138F9000A03DF /* UIAlertView+FLExtension.m in Sources */,
 				8FB8F363212138F9000A03DF /* NSFileManager+FLExtension.m in Sources */,
