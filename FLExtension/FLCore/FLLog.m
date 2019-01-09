@@ -67,9 +67,9 @@ void DefineFLLog(const char *file, int lineNumber, const char *functionName, NSS
 
 +(NSString *)filePathForLastPath:(NSString *)lastPath
 {
-    NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     NSString *logFilePath = [self logDirectoryPath];
     logFilePath = [logFilePath stringByAppendingPathComponent:lastPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:logFilePath]) {
         [fileManager createFileAtPath:logFilePath contents:nil attributes:nil];
     }

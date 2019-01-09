@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FLExtension"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "iOS 常用类别拓展"
   #s.description  = <<-DESC
   #                 DESC
