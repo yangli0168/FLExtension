@@ -7,9 +7,9 @@
 //
 
 #import "FLLog.h"
-#define CurrentFilePath @"SmartCall_t.text"   ///< 储存当前log文件
-#define BackupFilePath @"SmartCall_t_1.text"  ///< 存储备份log文件
-#define LogFileMaxSize 5*1024*1024            ///< log文件最大空间(M)
+#define CurrentFilePath @"SmartCall_t.txt"   ///< 储存当前log文件
+#define BackupFilePath @"SmartCall_t_1.txt"  ///< 存储备份log文件
+#define LogFileMaxSize 3*1024*1024            ///< log文件最大空间(M)
 
 static dispatch_queue_t writeLogQueue;
 
@@ -49,14 +49,26 @@ void DefineFLLog(const char *file, int lineNumber, const char *functionName, NSS
     
 }
 
++(NSString *)logDirectoryPath
+{
+    NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSString *directoryPath = [documentsPath stringByAppendingPathComponent:@"cylanLog"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:directoryPath]) {
+        [fileManager createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return directoryPath;
+}
+
++(NSString *)logFilePath
+{
+    return [self filePathForLastPath:CurrentFilePath];
+}
+
 +(NSString *)filePathForLastPath:(NSString *)lastPath
 {
     NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *logFilePath = [documentsPath stringByAppendingPathComponent:@"cylanLog"];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:logFilePath]) {
-        [fileManager createDirectoryAtPath:logFilePath withIntermediateDirectories:YES attributes:nil error:nil];
-    }
+    NSString *logFilePath = [self logDirectoryPath];
     logFilePath = [logFilePath stringByAppendingPathComponent:lastPath];
     if (![fileManager fileExistsAtPath:logFilePath]) {
         [fileManager createFileAtPath:logFilePath contents:nil attributes:nil];
