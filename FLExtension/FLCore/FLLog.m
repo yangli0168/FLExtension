@@ -9,7 +9,7 @@
 #import "FLLog.h"
 #define CurrentFilePath @"SmartCall_t.txt"   ///< 储存当前log文件
 #define BackupFilePath @"SmartCall_t_1.txt"  ///< 存储备份log文件
-#define LogFileMaxSize 3*1024*1024            ///< log文件最大空间(M)
+#define LogFileMaxSize 5*1024*1024           ///< log文件最大容量(M)
 
 static dispatch_queue_t writeLogQueue;
 
@@ -31,21 +31,24 @@ void DefineFLLog(const char *file, int lineNumber, const char *functionName, NSS
     NSString *content = [[NSString alloc] initWithFormat:format arguments:ap];
     va_end (ap);
     
-#ifdef DEBUG
+    NSString *mode = @"";
     
+#ifdef DEBUG
     NSLog(@"%@",content);
+    mode = @"Debug";
 #else
+    mode = @"Release";
+#endif
+    
     //dispatch_barrier_async 保证任务按顺序执行
     dispatch_barrier_async(writeLogQueue, ^{
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss.SSSS"];
         formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
         NSString *timeString = [formatter stringFromDate:[NSDate date]];
-        NSString *_content = [NSString stringWithFormat:@"%@|%s:%@",timeString,functionName,content];
+        NSString *_content = [NSString stringWithFormat:@"%@|%@|%s:%@",timeString,mode,functionName,content];
         [FLLog writeLog:_content];
     });
-    
-#endif
     
 }
 
@@ -89,10 +92,10 @@ void DefineFLLog(const char *file, int lineNumber, const char *functionName, NSS
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([self fileSizeForPath:filePath] > LogFileMaxSize) {
         
-        NSString *backupFilePath = [self filePathForLastPath:BackupFilePath];
+        ///如果当前日志文件容量大于最大容量，拷贝当前日志文件内容到备份文件中，清空当前日志文件
+        NSString *backupFilePath = [[self logDirectoryPath] stringByAppendingPathComponent:BackupFilePath];
         if ([fileManager fileExistsAtPath:backupFilePath]) {
             [fileManager removeItemAtPath:backupFilePath error:nil];
-            backupFilePath = [self filePathForLastPath:BackupFilePath];
         }
         
         if ([fileManager copyItemAtPath:filePath toPath:backupFilePath error:nil]) {

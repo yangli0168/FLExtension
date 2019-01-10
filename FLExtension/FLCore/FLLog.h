@@ -12,11 +12,7 @@ void DefineFLLog(const char *file, int lineNumber, const char *functionName, NSS
 
 @interface FLLog : NSObject
 
-/**
- FLLog debug模式下直接执行NSLog，不写入本地，release模式下记录内容到本地文件中
- 
- @param ... 支持传入过个NSString类型数据
- */
+///log内容写入本地文件中，使用方式同NSLog
 #define FLLog(args ...) DefineFLLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
 
 ///日志目录路径
