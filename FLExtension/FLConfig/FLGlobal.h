@@ -10,7 +10,7 @@
 #pragma mark Screen
 /// 屏幕高度、宽度
 #define Kwidth [[UIScreen mainScreen] bounds].size.width
-#define kheight [[UIScreen mainScreen] bounds].size.height
+#define Kheight [[UIScreen mainScreen] bounds].size.height
 
 //iphone x适配相关
 //iphone x StatusBar+NavgationBar高度
